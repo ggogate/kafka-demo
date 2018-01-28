@@ -5,12 +5,16 @@
   <version>0.0.1-SNAPSHOT</version>
   
   <dependencies>
-  	<!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka -->
 	<dependency>
 	    <groupId>org.apache.kafka</groupId>
 	    <artifactId>kafka_2.11</artifactId>
 	    <version>0.11.0.0</version>
 	</dependency>
+	<dependency>
+	    <groupId>org.apache.kafka</groupId>
+	    <artifactId>connect-json</artifactId>
+	    <version>0.11.0.0</version>
+	</dependency>		
 	<dependency>
 	    <groupId>org.apache.camel</groupId>
 	    <artifactId>camel-core</artifactId>
@@ -21,6 +25,21 @@
 	    <artifactId>camel-kafka</artifactId>
 	    <version>2.19.0</version>
     <!-- use the same version as your Camel core version -->
-</dependency>
+	</dependency>
   </dependencies>
+  
+  <build>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>  			
+  			<artifactId>maven-compiler-plugin</artifactId>
+  			<version>3.7.0</version>
+  			<configuration>
+  				<source>1.8</source>
+  				<target>1.8</target>
+  			</configuration>
+  		</plugin>
+  	</plugins>
+  
+  </build>
 </project>
